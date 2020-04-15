@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:prototype/Main.dart';
 import 'package:prototype/counter.dart';
+import 'package:prototype/Cart.dart';
 
-class DetailsScreen extends StatefulWidget {
+  class DetailsScreen extends StatefulWidget {
   final GetUsers data;
-
   const DetailsScreen({Key key, @required this.data}) : super(key: key);
 
   @override
@@ -172,7 +172,14 @@ class _DetailsScreenState extends State<DetailsScreen> {
                         .title
                         .copyWith(color: Colors.white),
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => cart(data: widget.data),
+                      ),
+                    );
+                  },
                 ),
               )
             ],
